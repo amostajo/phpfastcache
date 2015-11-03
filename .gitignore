@@ -231,3 +231,7 @@ pip-log.txt
 ## NetBeans
 #################
 nbproject/
+
+/cache
+/vendor
+/log
