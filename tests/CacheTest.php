@@ -1,6 +1,5 @@
 <?php
 
-use Katzgrau\KLogger\Logger;
 use PHPFastCache\phpFastCache;
 use PHPUnit_Framework_TestCase;
 
@@ -12,31 +11,21 @@ class CacheTest extends PHPUnit_Framework_TestCase
 	protected $cache;
 
 	/**
-	 * Log
-	 */
-	protected $logger;
-
-	/**
 	 * Setup configuration.
 	 */
 	protected function setUp()
 	{
-		$this->logger = new Logger( __DIR__ . '/../logs/');
-		try {
-			phpFastCache::setup([
-				'storage'		=> 'auto',
-				'path'			=> __DIR__ . '/../cache/',
-				'securityKey'	=> '',
-				'fallback'		=> [],
-				'htaccess'		=> true,
-				'server'		=> [],
+		phpFastCache::setup([
+			'storage'		=> 'auto',
+			'path'			=> __DIR__ . '/../cache/',
+			'securityKey'	=> '',
+			'fallback'		=> [],
+			'htaccess'		=> true,
+			'server'		=> [],
 
-			]);
+		]);
 
-			$this->cache = phpFastCache();
-		} catch (Exception $e) {
-			$this->logger->debug($e);
-		}
+		$this->cache = phpFastCache();
 	}
 
 	/**
