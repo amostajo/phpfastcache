@@ -2,12 +2,13 @@
 
 namespace PHPFastCache;
 
+use Exception;
+
 /*
  * khoaofgod@gmail.com
  * Website: http://www.phpfastcache.com
  * Example at our website, any bugs, problems, please visit http://faster.phpfastcache.com
  */
-
 
 // main class
 class phpFastCache {
