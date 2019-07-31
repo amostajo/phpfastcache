@@ -91,9 +91,11 @@ class phpfastcache_files extends  BasePhpFastCache implements phpfastcache_drive
 
         if($toWrite == true) {
                 try {
-                    $f = @fopen($file_path, "w+");
-                    fwrite($f, $data);
-                    fclose($f);
+                    $f = @fopen($file_path, 'w+');
+                    if ($f !== false) {
+                        fwrite($f, $data);
+                        fclose($f);
+                    }
                 } catch (Exception $e) {
                     // miss cache
                     return false;
